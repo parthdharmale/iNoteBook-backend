@@ -9,7 +9,10 @@ const port = 5000;
 // var app = express()
 
 app.get("/", (req, res) => res.send("Hello Parth!"));
-app.use(cors({ origin: true })); //enable all CORS
+app.use(cors({
+    origin: 'https://i-note-book-frontend-beta.vercel.app',
+    credentials: true // If your frontend sends credentials like cookies
+}));
 app.use(express.json());
 
 // Available Routes
